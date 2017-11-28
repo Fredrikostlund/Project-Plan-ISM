@@ -24,7 +24,7 @@ h1#title{
 .section {
   background-color: #ffffff;
   width: 80%;
-  height: 90vh;
+  min-height: 90vh;
   float: left;
   margin-left: 10%;
   margin-right: 10%;
@@ -37,14 +37,6 @@ h1#title{
   height: 90vh;      /* Give height of your fixed element */
   margin-top: -75vh; /* Give negative margin of your fixed element */
   visibility: hidden;
-}
-#Base-Group {
-  background-color: #000000;
-  width: 80%;
-  height: 80vh;
-  float: left;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .dropbtn {
