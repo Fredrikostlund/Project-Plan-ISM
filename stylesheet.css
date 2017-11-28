@@ -29,7 +29,11 @@ div.section {
   margin-right: 10%;
   margin-top:12vh;
 }
-
+/*CUSTOMIZE SHIT*/
+h1.section-title{}
+h2.section-subtitle{}
+h3.section-subsubtitle{}
+p.section-paragraph{}
 /*DROP DOWN MENU SHIT*/
 .offset:before {
 	display: block;
