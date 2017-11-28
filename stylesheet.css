@@ -21,7 +21,7 @@ h1#title{
   margin-top:-2vh;
   color: #ffffff;
 }
-.section {
+div.section {
   background-color: #ffffff;
   width: 80%;
   min-height: 90vh;
@@ -29,8 +29,15 @@ h1#title{
   margin-left: 10%;
   margin-right: 10%;
   margin-top:15vh;
-
 }
+
+/*CUSTOMIZE SECTIONS*/
+h1.setion-title{}
+h2.section-subtitle{}
+h3.section-subsubtitle{}
+p.section-paragraph{}
+
+/*DROP DOWN MENU SHIT*/
 .offset:before {
 	display: block;
  	content: " ";
@@ -38,7 +45,6 @@ h1#title{
   margin-top: -75vh; /* Give negative margin of your fixed element */
   visibility: hidden;
 }
-
 .dropbtn {
     background-color: #f48942;
     padding: 14px;
@@ -69,7 +75,6 @@ h1#title{
     text-decoration: none;
     display: block;
 }
-
 
 .dropdown-content a:hover {background-color: #e37831}
 
