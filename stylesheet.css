@@ -17,8 +17,11 @@ a {
   color: #FFFFFF;
 }
 h1#title{
+  margin-left: 10vw;
   margin-top:-2vh;
+  font-size: 3vw;
   color: #ffffff;
+  display: inline-block;
 }
 div.section {
   background-color: #ffffff;
@@ -52,9 +55,8 @@ p.section-paragraph{}
 .dropdown {
     float: right;
     margin-right: 10vw;
-    margin-top:-10vh;
-    position: relative;
     display: inline-block;
+    margin-top: -2vh;
 }
 
 .dropdown-content {
