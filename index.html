@@ -13,11 +13,15 @@
 
     <button class="dropbtn"><img src="images/burgermenu.png" height="20px" width="20px" /></button>
     <div class="dropdown-content">
-      <a href="#ProjectPlan">ProjectPlan</a>
-      <a href="#Flow-Chart">Flow Chart</a>
-      <!--<a href="#Result">Result</a>
-      <a href="#Discussion">Discussion</a>-->
-
+      <a href="#Introduction">Introduction</a>
+      <a href="#methods">Methods</a>
+      <a href="#usermodel">User model</a>
+      <a href="#activitymodel">Activity model</a>
+      <a href="#Flow-Chart">Flow-Chart</a>
+      <a href="#intelligence">Intelligence behind system</a>
+      <a href="#timeplan">Timeplan</a>
+      <a href="#result">Result</a>
+      <a href="#Discussion">Discussion</a>
     </div>
   </header>
 
@@ -32,7 +36,7 @@
   -->
   <div id="ProjectPlan" class="section offset">
     <h1 class="section-title">Project Plan</h1>
-    <h2 class="section-subtitle">Introduction</h2>
+    <h2 id="Introduction" class="section-subtitle offset">Introduction</h2>
     <p class="section-paragraph">Working at Volvo involves high workload which involves among other factors stress, physical strain, high
         noise levels and high variety of heat. All of these aspects could affect workers health. A big challenge for
         Volvo is for the workers to actually use the safety-clothing at hand, as these are too warm and the
@@ -49,7 +53,7 @@
       </br>● What are the relevant aspects of the environment?
       </br>● How do we know when temperature adjustment is necessary and noninvasive?
     </p>
-    <h2 class="section-subtitle">Methods</h2>
+    <h2 id="methods" class="section-subtitle offset">Methods</h2>
     <p class="section-paragraph">
       During the project the design method used will be linear, due to the lack of time. A concept will be
       produced, and if enough time, a prototype will be made.
@@ -66,16 +70,87 @@
       When the worker moves on to another task the equipment adjusts the temperature according to the outer
       body temperature, the task and what it knows about the workers different patterns.
     </p>
-    <h3 class="section-subtitle">User model</h3>
+    <h3 id="usermodel" class="section-subtitle offset">User model</h3>
     <img src="images/User-model.jpg" width="800px" />
-    <h3 class="section-subsubtitle">Activity model</h3>
+    <h3 id="activitymodel" class="section-subsubtitle offset">Activity model</h3>
     <img src="images/activity-model.png" width="800px" />
+
+    <h3 id="Flow-Chart" class="section-subtitle">Flow Chart</h1>
+      <img src="images/Flow-Chart.jpg" width="50%" />
+
     <h3 class="section-subsubtitle">Anticipated Design Solution that will be Demonstrated January 9-10</h3>
     <p class="section-paragraph">
        ● A prototype the simulate the function of the equipment.
       </br>  ● A visual demonstration of the system and how it is learning behaviours and adjusting the
         temperature.
       </br>● Posters with information about the product.</p>
+    <h3 id="intelligence" class="section-subsubtitle offset">Intelligence behind the system</h3>
+    <p class="section-paragraph">
+      The system has several inputs and one main output,
+      adjustment of warmth of workers at Volvo. There are two viable options for reading and interpreting these inputs,
+      either by using a decision tree or using a neural network.
+      This system will focus on using the latter and why will be explained in the following paragraphs.
+    </p>
+    <h4 class="section-subsubsubtitle">Why neural network and not decision tree?</h4>
+    <p class="section-paragraph">
+      A neural network has a larger possibility for customizing the system to each unique
+      individual whom uses it without having to account for each possible solution beforehand.
+      A decision tree has the limitation that each given state must be assigned beforehand,
+      for example “if welder is on apply cooling”. Therefore, a neural network is used when you
+      want the system to design its own states depending on the actions of the user.
+    </p>
+    <h4 class="section-subsubsubtitle">Design of the neural network</h4>
+    <p class="section-paragraph">
+      A neural network is built up by input, nodes and outputs.
+      These inputs are binary and represent a sensor or action,
+      nodes are the computational units of the neural network and the output
+      are the result of the computations. These form the three layers of our
+      ANN (Artificial neural network) and they are connected through links(edges)
+      with different strengths/weights to represent the bond of each input towards
+      a specific outcome.
+    </p>
+    <strong>Input</strong></br>
+    <p class="section-paragraph">
+    In the system we have several inputs that
+    make up the first layer of the neural network, which is the temperature
+    of the user, location, welder information such as if the welder is on/off
+    and how long the user have been welding.
+    </p>
+    <strong>Nodes</strong></br>
+    <p class="section-paragraph">
+    Nodes make up the second and most important layer of the neural network,
+    the computational part of the network. They are responsible for calculating
+    the total weight of all inputs and send this through an activation function.
+    The activation function returns a representation of the likelihood for a
+    specific output.
+    </p>
+    <img src="images/Activation.PNG" width="50%" /></br>
+    <strong>Output</strong></br>
+    <p class="section-paragraph">
+      The final layer of the neural network which will indicate an action to be taken,
+      which can be one of the following: increase/decrease warmth & do nothing.
+    </p>
+    <strong>Perceptron training</strong></br>
+    <p class="section-paragraph">
+      Perceptron training is the core functionality of a neural network,
+      this is the part where all the weights of the neural network are adjusted
+      according to the outputs. If a user is being cooled down when it’s not supposed
+      to the network should adjust accordingly to prevent this from happening in the future.
+      This is the largest struggle of a system of this scale, how do we train the weights in the
+      beginning so that the user doesn’t get affected in a negative way and stops using the equipment all together.
+      This is where the user input from the welding helmet and controls for the cooling
+      system comes in handy. In the beginning the system will work as a thermostat, only
+      change the heating when receiving user input. When a user gets cold he/she tells the system to heat up,
+      the neural network saves the state and turns up the heat. After recording data from the users input the system can
+      start to predict when to adjust the temperature and when to stay idle. After each
+      prediction the neural network waits for the user to respond, if the user responds by
+      changing the temperature a negative result is returned to the neural network and the
+      weights are adjusted accordingly. For example: The system predicts that the user is
+      going to get warm and starts a cooling process, the user responds by turning up the heat.
+      The neural network changes the weights responsible for these false actions, i.e. the weights
+      for “do nothing” and “apply heat” are increased and the “cool down” weights are decreased.
+    </p>
+    <img src="images/NeuralNetwork.png" width="50%"/></br>
     <h3 class="section-subsubtitle">Requirements</h3>
     <p class="section-paragraph">● The user should have the possibility to adjust the amount of cooling
     </br>● The system should learn how the user is performing its task, creating autonomous cooling
@@ -90,7 +165,7 @@
       </br>● Softlab: To be able to create a wearable containing the thermoelectric generator and its sensors.
       </br>● Tutoring: We desperately need help assembling the electronic components.
     </p>
-    <h3 class="section-subsubtitle">Time Plan</h3>
+    <h3 id="timeplan" class="section-subsubtitle offset">Time Plan</h3>
     <p class="section-paragraph">
       <b>Table​ ​1:</b>​Project divided into weekly segments
     </br><img src="images/TimePlan.PNG" width="800px" />
@@ -108,21 +183,45 @@
       concept is a device which adapts to a specific user(not enough time to implement during the course).
     </p>
 
-      <h2 class="section-subtitle">Result</h2>
+      <h2 id="result" class="section-subtitle offset">Result</h2>
       <h3 class="section-subtitle">Concept movie</h3>
       <video width="80%" height="auto" controls>
         <source src="images/Film.mp4" type="video/mp4">
       </video>
 
       <h3 class="section-subtitle">Prototype</h3>
+      <img src="images/prototyp.png" width="50%" float="left" />
+      <img src="images/prototyp_bild.JPG" width="30%" float="left" />
+      <p>
+        Our prototype is a "Proof of concept" where we induct cooling upon the users
+        by regulating the voltage to a thermal generator. This is soley used for
+        enhancing our concept, when we present we will use it as means of
+        showing that it is possible to cool down with rather simple means.
+      </p>
 
+    <h1 id="Discussion" class="section-title">Discussion</h1>
+      <p class="section-paragraph">
 
+  Regarding the work flow, we all agree that it has gone well.
+  We are pleased with the collaboration with the OT students. Since the start of the project we
+  have had an open discussion, where everyone has had the opportunity to be heard. The meetings
+   have been efficient and fruitful. Though we are satisfied with the collaboration, we felt
+   that we were thrown into a project which was already halfway finished. Resulting in us arriving
+   to a kick-off and briefing completely unprepared.
 
-    <div id="Discussion" class="section offset">
-      <h1 class="section-title">Discussion</h1>
-      <h2 class="section-subtitle"></h2>
-      <p class="section-paragraph"></p>
-    </div>
+  As mentioned above, the prototype was made in SoftLab. The assistance we received there was
+  very useful, and we managed to produce a good enough prototype in a short amount of time.
+  Because of the lack of time in the project, the development of the prototype has suffered.
+   However, we are satisfied with the result.
+
+  Regarding improvements of the projects, user integration has not been considered to the extent
+   we would like. From the collected data we were given by the OT students, we have developed a
+    concept which addresses the main problem for the workers as well as the goals of the course.
+    Once again, the lack of time has been the primary reason why no user testing has been made.
+
+  In conclusion, we believe the developed concept will improve the work environment.
+  There are some technical barriers to overcome, which might be challenging, but not at all impossible.
+</p>
     <h3 class="section-subsubtitle">References</h3>
     <p class="section-paragraph">
       Ed Hayward,(2008),Massachusetts institute of technology,MIT researchers achieve dramatic
@@ -130,17 +229,11 @@
     </br>Article: http://news.mit.edu/2008/thermoelectric-0320
       </br>G. Jeffrey Snyder(2008),Small Thermoelectric Generators
     </br>Article: http://www.electrochem.org/dl/interface/fal/fal08/fal08_p54-56.pdf
+  </br>Gunathilake Banda Delkumburewatte,(2011),Department of textile and apparell Technology, The Open university of Sri Lanka
+</br>Article:http://www.tandfonline.com/doi/full/10.1080/00405000.2011.587647?scroll=top&needAccess=true
     </p>
 
-  </div>
 
-  <div id="Flow-Chart" class="section offset">
-    <h1 class="section-title">Flow Chart</h1>
-    <img src="images/Flow-Chart.jpg" width="800px" />
-    <h2 class="section-subtitle"></h2>
-    <h3 class="section-subsubtitle"></h3>
-    <p class="section-paragraph"></p>
-  </div>
 
 
 <!--

@@ -16,6 +16,12 @@ a {
   text-decoration: none;
   color: #FFFFFF;
 }
+a.anchor {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
 h1#title{
   margin-left: 10vw;
   margin-top:-2vh;
@@ -39,10 +45,11 @@ h3.section-subsubtitle{}
 p.section-paragraph{}
 /*DROP DOWN MENU SHIT*/
 .offset:before {
-	display: block;
+  display: block;
  	content: " ";
-  height: 90vh;      /* Give height of your fixed element */
-  margin-top: -75vh; /* Give negative margin of your fixed element */
+  height: 15vh;      /* Give height of your fixed element */
+  margin-top: -15vh; /* Give negative margin of your fixed element */
+  top:-90px;
   visibility: hidden;
 }
 .dropbtn {
