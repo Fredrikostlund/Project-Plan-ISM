@@ -150,7 +150,23 @@
       The neural network changes the weights responsible for these false actions, i.e. the weights
       for “do nothing” and “apply heat” are increased and the “cool down” weights are decreased.
     </p>
-    <img src="images/NeuralNetwork.png" width="50%"/></br>
+    <img src="images/neuralnetwork.jpg" width="50%"/></br>
+    <p class="section-paragraph">
+      Each input to the neural network is to be accounted for as a perceptron, we'll discussion
+      each perceptron and their main purpose in the section that follows.</br></br>
+      <strong>Welder status</strong></br>Is the indication if and when the user is activly
+      using the welder. An important indication of plausible overheating.</br></br>
+      <strong>Total welding time</strong></br>Indicates how long the user has been
+      welding, each timestep should increase the possibility of cooling the user down.</br></br>
+      <strong>Body Temperature</strong></br>Sensor picking up the outer body temperature.</br></br>
+      <strong>Surrounding Temperature</strong></br>Indication on the room Temperature
+      used as a reference, for example during the summer this indication is of
+      high value.</br></br>
+      <strong>Location</strong></br>If the user is at the welding station or if
+      he/she is idle on a coffebreak should be accounted for.</br></br>
+      <strong>Time of day</strong></br>Time of day might affect the situational
+      heating of the person using the equipment.
+    </p>
     <h3 class="section-subsubtitle">Requirements</h3>
     <p class="section-paragraph">● The user should have the possibility to adjust the amount of cooling
     </br>● The system should learn how the user is performing its task, creating autonomous cooling
